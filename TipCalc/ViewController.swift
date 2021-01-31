@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
+    // Connecting UI items to code
     @IBOutlet weak var billAmountTextField: UITextField!
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBAction func calculateTip(_ sender: Any) {
         
         
-        // bill amount from the text field input
+                // bill amount from the text field (user input)
                 let bill = Double(billAmountTextField.text!) ?? 0
                 
                 // percentages available for tip
