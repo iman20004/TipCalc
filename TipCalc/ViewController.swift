@@ -22,6 +22,19 @@ class ViewController: UIViewController {
         
         // Sets the title in the Navigation bar
         self.title = "Tip Calculator"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(enableDark), name: Notification.Name("darkModeChanged"), object: nil)
+    
+    }
+    
+    @objc func enableDark(){
+        let boolDark = UserDefaults.standard.bool(forKey: "boolDark")
+        
+        if boolDark{
+            view.backgroundColor = .lightGray
+        }else{
+            view.backgroundColor = .white
+        }
     }
     
     
