@@ -26,13 +26,17 @@ class ViewController: UIViewController {
         // show keyboard when app opened
         billAmountTextField.becomeFirstResponder()
         
+        // check for night mode notification
         NotificationCenter.default.addObserver(self, selector: #selector(enableDark), name: Notification.Name("darkModeChanged"), object: nil)
     
     }
     
+    // change to night/normal mode when settings switch changed
     @objc func enableDark(){
+        // get bool value for defaults
         let boolDark = UserDefaults.standard.bool(forKey: "boolDark")
         
+        // change mode accordingly
         if boolDark{
             view.backgroundColor = .lightGray
         }else{
@@ -40,13 +44,13 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    // hide keyboard when tap elsewhere
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
     }
     
+    
     @IBAction func calculateTip(_ sender: Any) {
-        
         
         // bill amount from the text field (user input)
         let bill = Double(billAmountTextField.text!) ?? 0
