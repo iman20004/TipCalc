@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         // Sets the title in the Navigation bar
         self.title = "Tip Calculator"
         
+        // show keyboard when app opened
+        billAmountTextField.becomeFirstResponder()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(enableDark), name: Notification.Name("darkModeChanged"), object: nil)
     
     }
@@ -45,21 +48,21 @@ class ViewController: UIViewController {
     @IBAction func calculateTip(_ sender: Any) {
         
         
-                // bill amount from the text field (user input)
-                let bill = Double(billAmountTextField.text!) ?? 0
+        // bill amount from the text field (user input)
+        let bill = Double(billAmountTextField.text!) ?? 0
                 
-                // percentages available for tip
-                let tipPercentages = [0.15, 0.18, 0.2]
+        // percentages available for tip
+        let tipPercentages = [0.15, 0.18, 0.2]
                
-                // calculate tip by multiplying bill and tip percentage
-                let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
+        // calculate tip by multiplying bill and tip percentage
+        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
                 
-                // calculate total by adding bill and tip
-                let total = bill + tip
+        // calculate total by adding bill and tip
+        let total = bill + tip
                 
-                // formatting to 2 decimal points
-                tipAmountLabel.text = String(format: "$%.2f", tip)
-                totalLabel.text = String(format: "$%.2f", total)
+        // formatting to 2 decimal points
+        tipAmountLabel.text = String(format: "$%.2f", tip)
+        totalLabel.text = String(format: "$%.2f", total)
     }
     
 
