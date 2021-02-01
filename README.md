@@ -24,6 +24,7 @@ The following **additional** features are implemented:
 
 - [x] Added a Settings screen
 - [x] Night mode option
+- [x] Hide keyboard when tapped elsewhere
 
 ## Video Walkthrough
 
