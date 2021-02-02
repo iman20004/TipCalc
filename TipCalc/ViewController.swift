@@ -23,20 +23,22 @@ class ViewController: UIViewController {
         // Sets the title in the Navigation bar
         self.title = "Tip Calculator"
         
-        // show keyboard when app opened
+        // Keyboard always visible for bill amount input
         billAmountTextField.becomeFirstResponder()
         
-        // check for night mode notification
+        // Check for night mode notification
         NotificationCenter.default.addObserver(self, selector: #selector(enableDark), name: Notification.Name("darkModeChanged"), object: nil)
     
     }
     
-    // change to night/normal mode when settings switch changed
+    
+    
+    // Change to night/normal mode when settings switch changed
     @objc func enableDark(){
-        // get bool value for defaults
+        // get the saved boolean value for night mode
         let boolDark = UserDefaults.standard.bool(forKey: "boolDark")
         
-        // change mode accordingly
+        // Change background accordingly
         if boolDark{
             view.backgroundColor = .lightGray
         }else{
@@ -44,27 +46,30 @@ class ViewController: UIViewController {
         }
     }
     
-    // hide keyboard when tap elsewhere
+    
+    
+    // Hide keyboard when tap elsewhere
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
     }
     
     
+    
+    // Calculate the desired tip
     @IBAction func calculateTip(_ sender: Any) {
-        
-        // bill amount from the text field (user input)
+        // Bill amount from the text field (user input)
         let bill = Double(billAmountTextField.text!) ?? 0
                 
-        // percentages available for tip
+        // Percentages available for tip
         let tipPercentages = [0.15, 0.18, 0.2]
                
-        // calculate tip by multiplying bill and tip percentage
+        // Calculate tip by multiplying bill and tip percentage
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
                 
-        // calculate total by adding bill and tip
+        // Calculate total by adding bill and tip
         let total = bill + tip
                 
-        // formatting to 2 decimal points
+        // Formatting to 2 decimal points
         tipAmountLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
