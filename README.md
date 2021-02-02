@@ -36,7 +36,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Faced some issues with the personal token on git and connecting that to Xcode
+My first iOS application. Faced some challenges getting a grip of swift and xcode. Some problems with the night mode when switching between the tip calculator and settings screen. Used numerous UI items such as switch toggle, text fields, label.
+Overall was as pretty exciting project. 
 
 ## License
 
