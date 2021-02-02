@@ -9,7 +9,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var NightSwitch: UILabel!
+    @IBOutlet weak var nightMode: UILabel!
     @IBOutlet weak var darkSwitch: UISwitch!
     
     
@@ -22,13 +22,13 @@ class SettingsViewController: UIViewController {
     // Function to switch to night mode
     @IBAction func themeSwitch(_ sender: UISwitch) {
         
-        // storing the bool value of the switch
+        // Storing the boolean value of the night switch
         UserDefaults.standard.set(sender.isOn, forKey: "boolDark")
         
         // Notification for Tip Calculator screen
         NotificationCenter.default.post(name: Notification.Name("darkModeChanged"), object: nil)
         
-        //change background according to bool
+        // Change background according to bool
         if sender.isOn{
             self.view.backgroundColor = .lightGray
         } else {
