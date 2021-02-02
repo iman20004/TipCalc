@@ -9,7 +9,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var nightMode: UILabel!
+    
+    @IBOutlet weak var nightLabel: UILabel!
     @IBOutlet weak var darkSwitch: UISwitch!
     
     
@@ -32,7 +33,7 @@ class SettingsViewController: UIViewController {
         if sender.isOn{
             self.view.backgroundColor = .lightGray
         } else {
-            self.view.backgroundColor = .white
+            self.view.backgroundColor =  UIColor.systemTeal
         }
         
     }

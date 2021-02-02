@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         if boolDark{
             view.backgroundColor = .lightGray
         }else{
-            view.backgroundColor = .white
+            view.backgroundColor = UIColor.systemTeal
         }
     }
     
