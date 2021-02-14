@@ -26,6 +26,7 @@ The following **additional** features are implemented:
 - [x] Night mode option
 - [x] Hide keyboard when tapped elsewhere
 - [x] Custom font (Avenir next)
+- [x] Added an app icon
 
 ## Video Walkthrough
 
